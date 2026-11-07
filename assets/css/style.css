@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+section {
+  margin: 50px 0;
+  padding: 0 50px;
+}
+
+nav {
+  padding: 20px;
+}

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>86nodes | Creating a Linux Service with Systemd</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="../index.html">Go Home</a>
+      </nav>
+    </header>
+    <main>
+      <div class="wrapper">
+        <section>
+          <h1>Creating a Linux Service with Systemd</h1>
+        </section>
+        <section>
+          <h2>Service file Template</h2>
+          <pre><code>[Unit]
+Description=
+After=network.target
+
+[Service]
+User=
+Group=
+WorkingDirectory=
+Environment=
+ExecStart=
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+        </section>
+        <section>
+          <h2>Finished Version</h2>
+          <pre><code>[Unit]
+Description=FastAPI Finance Management System
+After=network.target
+
+[Service]
+User=martins
+Group=martins
+WorkingDirectory=/var/www/lexr-cash
+Environment="PATH=/var/www/lexr-cash/.venv/bin"
+ExecStart=/var/www/lexr-cash/.venv/bin/fastapi run --port 5353
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
